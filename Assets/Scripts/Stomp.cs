@@ -18,28 +18,12 @@ public class Stomp : MonoBehaviour
         //Destroy(this.gameObject);
         //Debug.Log("si");
 
-        if(this.GetComponent<Collider>().tag == "Head")
-        {
-            Debug.Log("aa");
-            if (col.GetComponent<Collider>().tag == "Player")
-            {
-                Debug.Log("bb");
-            }
-            if (this.GetComponent<Collider>().tag == "Enemy")
-            {
-                Debug.Log("Enemy");
-            }
-        }
-
-        if (this.GetComponent<Collider>().tag == "Enemy")
-        {
-            Debug.Log("Enemy");
-        }
+      
 
 
         
         //fix capsule coolider size
-        if (col.GetComponent<Collider>().tag == "Player" && this.GetComponent<Collider>().tag == "Head")
+        if (col.GetComponent<Collider>().tag == "Foot" && this.GetComponent<Collider>().tag == "Head")
         {
             Debug.Log(col.GetComponent<Collider>().tag);
             Debug.Log(this.GetComponent<Collider>().tag);
