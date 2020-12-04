@@ -748,6 +748,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform 8
       objectReference: {fileID: 0}
+    - target: {fileID: 7269325987113931611, guid: 2ef5fea576b21e342988bd311e2dabbe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7269325987113931612, guid: 2ef5fea576b21e342988bd311e2dabbe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
