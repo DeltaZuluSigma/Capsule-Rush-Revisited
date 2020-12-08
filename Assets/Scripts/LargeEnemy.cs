@@ -15,7 +15,7 @@ public class LargeEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxLives = 10;
+        maxLives = 3;
         lives = maxLives;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         coolDownTimer = 2;
@@ -37,30 +37,32 @@ public class LargeEnemy : MonoBehaviour
         }
         else
         {
-            if (coolDownTimer > 0)
-            {
-                coolDownTimer -= Time.deltaTime;
-            }
-            if (coolDownTimer < 0)
-            {
-                coolDownTimer = 0;
+            if (transform.position.x >= (target.position.x - 15) && transform.position.x <= (target.position.x + 15)) {
+                if (coolDownTimer > 0)
+                {
+                    coolDownTimer -= Time.deltaTime;
+                }
+                if (coolDownTimer < 0)
+                {
+                    coolDownTimer = 0;
+                }
+
+                if (coolDownTimer == 0)
+                {
+                    transform.position = new Vector3(target.position.x + 2, target.position.y + 1.47f, target.position.z);//x and z can be changed accordingly
+                                                                                                                          //Debug.Log(coolDownTimer);
+                    coolDownTimer = coolDown;
+                    //Debug.Log(coolDownTimer);
+                }
+
+                transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+
+                if (transform.position.y == target.position.y)
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y + 1.47f, transform.position.z);
+                }
             }
 
-            if (coolDownTimer == 0)
-            {
-                transform.position = new Vector3(target.position.x + 2, target.position.y + 1.47f, target.position.z);//x and z can be changed accordingly
-                                                                                                                      //Debug.Log(coolDownTimer);
-                coolDownTimer = coolDown;
-                //Debug.Log(coolDownTimer);
-
-            }
-
-            transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-
-            if (transform.position.y == target.position.y)
-            {
-                transform.position = new Vector3(transform.position.x, transform.position.y + 1.47f, transform.position.z);
-            }
         }
     }
 
@@ -83,15 +85,6 @@ public class LargeEnemy : MonoBehaviour
         if (col.GetComponent<Collider>().tag == "Ground")
         {
             transform.position = new Vector3(transform.position.x, transform.position.y + 1.47f, transform.position.z);
-
-
-        }
-        if (col.GetComponent<Collider>().tag == "Player" && this.GetComponent<Collider>().tag == "Head")
-        {
-            Debug.Log("yes");
-            Destroy(this.gameObject);
-            lives=0;
-
         }
 
     }

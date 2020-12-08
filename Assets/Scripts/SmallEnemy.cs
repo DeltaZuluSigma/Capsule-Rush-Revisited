@@ -31,7 +31,11 @@ public class SmallEnemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);//if turned into vector 2 only folllows in 2d
+        if (transform.position.x >= (target.position.x - 15) && transform.position.x <= (target.position.x + 15))
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);//if turned into vector 2 only folllows in 2d
+        }
+            //transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);//if turned into vector 2 only folllows in 2d
     }
 
     public void dmg()
@@ -53,7 +57,6 @@ public class SmallEnemy : MonoBehaviour
              this.lives--;
              if (lives == 0)
              {
-                Debug.Log("simpo");
                 Destroy(this.gameObject);
              }
 

@@ -7,7 +7,7 @@ public class EnemyLaser : MonoBehaviour
 
 
     private Transform target;
-    private float speed = 1;
+    private float speed = 4.0f;
     private Rigidbody rb;
     private Vector3 moveDirection;
 
@@ -17,7 +17,7 @@ public class EnemyLaser : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();//gets the target
         moveDirection = ((target.transform.position - this.transform.position).normalized * speed);
         rb.velocity = new Vector3(moveDirection.x, moveDirection.y, moveDirection.z);
         Destroy(gameObject, 10f);//timer
@@ -27,14 +27,13 @@ public class EnemyLaser : MonoBehaviour
  
     void OnTriggerEnter(Collider col)
     {
-        if(col.GetComponent<Collider>().tag == "Enemy"|| col.GetComponent<Collider>().tag == "Head"|| col.GetComponent<Collider>().tag == "EnemyLaser")
+        if(col.GetComponent<Collider>().tag == "Enemy"|| col.GetComponent<Collider>().tag == "Head"|| col.GetComponent<Collider>().tag == "EnemyLaser"|| col.GetComponent<Collider>().tag == "Obstacles")
         {
-            Debug.Log("yallah");
+            
         }
        else
         {
             Destroy(this.gameObject);
-            Debug.Log("simpo");
        }
 
     }

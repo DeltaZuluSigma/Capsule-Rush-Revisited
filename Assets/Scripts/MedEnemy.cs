@@ -8,7 +8,7 @@ public class MedEnemy : MonoBehaviour
     private int lives;
     private int maxLives;
     private Transform target;
-    private float coolDown = 1f;//this is in seconds can be switched for later use if some other itme is prefered 
+    private float coolDown = 2f;//this is in seconds can be switched for later use if some other itme is prefered 
     private float coolDownTimer;
     int maxNumberOfComponents = 2;
 
@@ -16,7 +16,7 @@ public class MedEnemy : MonoBehaviour
     void Start()
     {
         
-        maxLives = 5;
+        maxLives = 2;
         lives = maxLives;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
@@ -39,23 +39,23 @@ public class MedEnemy : MonoBehaviour
         }
         else//if the enemy still has lives it goes into this scipt
         {
-
-            if (coolDownTimer > 0)
+            if (transform.position.x >= (target.position.x - 15) && transform.position.x <= (target.position.x + 15))
             {
-                coolDownTimer -= Time.deltaTime;
-            }
-            if (coolDownTimer < 0)
-            {
-                coolDownTimer = 0;
-            }
-            if (coolDownTimer == 0)
-            {
-                Instantiate(EnemyLaser, this.transform.position, Quaternion.identity);//makes the lasers if the cooldown is done
 
-                GameObject l = Instantiate(EnemyLaser) as GameObject;
-                //l.transform.position = this.transform.position;
-                coolDownTimer = coolDown;//resets cooldown
-
+                if (coolDownTimer > 0)
+                {
+                    coolDownTimer -= Time.deltaTime;
+                }
+                if (coolDownTimer < 0)
+                {
+                    coolDownTimer = 0;
+                }
+                if (coolDownTimer == 0)
+                {
+                    Instantiate(EnemyLaser, this.transform.position, Quaternion.identity);//makes the lasers if the cooldown is done
+                    GameObject l = Instantiate(EnemyLaser) as GameObject;
+                    coolDownTimer = coolDown;//resets cooldown
+                }
             }
         }
 
