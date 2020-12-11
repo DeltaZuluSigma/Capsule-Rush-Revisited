@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyLaser : MonoBehaviour
+public class FireBall : MonoBehaviour
 {
 
 
@@ -20,21 +20,21 @@ public class EnemyLaser : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();//gets the target
         moveDirection = ((target.transform.position - this.transform.position).normalized * speed);
         rb.velocity = new Vector3(moveDirection.x, moveDirection.y, moveDirection.z);
-        Destroy(gameObject, 5f);//timer
+        Destroy(gameObject, 5.0f);//timer
 
     }
 
- 
+
     void OnTriggerEnter(Collider col)
     {
-        if(col.GetComponent<Collider>().tag == "Enemy"|| col.GetComponent<Collider>().tag == "Head"|| col.GetComponent<Collider>().tag == "EnemyLaser"|| col.GetComponent<Collider>().tag == "Obstacles" || col.GetComponent<Collider>().tag == "Spawner")
+        if (col.GetComponent<Collider>().tag == "Enemy" || col.GetComponent<Collider>().tag == "Head" || col.GetComponent<Collider>().tag == "EnemyLaser" || col.GetComponent<Collider>().tag == "Obstacles" || col.GetComponent<Collider>().tag == "Spawner"|| col.GetComponent<Collider>().tag == "Ground")
         {
-            
+
         }
-       else
+        else
         {
             Destroy(this.gameObject);
-       }
+        }
 
     }
 }

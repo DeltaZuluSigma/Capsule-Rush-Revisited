@@ -21,7 +21,7 @@ public class SmallEnemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log(this.transform.childCount);
+        //Debug.Log(this.transform.childCount);
         if (this.transform.childCount == 0  )//checks if the childs are dead and if they are it will destory the object
         {
             Destroy(this.gameObject);

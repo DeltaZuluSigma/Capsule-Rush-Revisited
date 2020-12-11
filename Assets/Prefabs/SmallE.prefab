@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 356447978620613806}
-  - component: {fileID: 8375371753224629962}
-  - component: {fileID: 7109932214097593966}
+  - component: {fileID: 8492570440060332710}
+  - component: {fileID: 1134924803429387814}
   - component: {fileID: 1558747434769058448}
-  - component: {fileID: 7849313842198714611}
+  - component: {fileID: 7085308806845534777}
   m_Layer: 0
   m_Name: SmallE
   m_TagString: Enemy
@@ -35,7 +35,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8375371753224629962
+--- !u!114 &8492570440060332710
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,18 +44,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 356447978620613801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d08d5af8e4c534ea9e910f2bcbf7fd, type: 3}
+  m_Script: {fileID: 11500000, guid: a770874607b329a41881f16fd6478d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
---- !u!114 &7109932214097593966
+--- !u!114 &1134924803429387814
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356447978620613801}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25e4cbd54165fa446a72be6dffbf47b0, type: 3}
   m_Name: 
@@ -76,7 +75,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &7849313842198714611
+--- !u!65 &7085308806845534777
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,11 +83,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356447978620613801}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
-  m_Center: {x: -1.3749478, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.840619, z: 1}
+  m_Center: {x: -0.31855023, y: 0.5087957, z: 0}
 --- !u!1 &659087815560102387
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,7 +99,6 @@ GameObject:
   - component: {fileID: 2325735359484015465}
   - component: {fileID: 1367946354644865091}
   - component: {fileID: 2984062980686675015}
-  - component: {fileID: 3661721222542271964}
   - component: {fileID: 7965129231364944798}
   m_Layer: 0
   m_Name: Body
@@ -150,7 +148,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2698575532b12944e9aee7048e28b2a5, type: 2}
+  - {fileID: 2100000, guid: 4c934758fe309bc4bb16bf32c6914f50, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -172,20 +170,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3661721222542271964
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 659087815560102387}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.50250155
-  m_Height: 1.481467
-  m_Direction: 1
-  m_Center: {x: 0.0025015473, y: -0.2592663, z: 0}
 --- !u!65 &7965129231364944798
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -211,7 +195,6 @@ GameObject:
   - component: {fileID: 3371579313183320783}
   - component: {fileID: 5714366013775715706}
   - component: {fileID: 4255207045227054251}
-  - component: {fileID: 2415601127645428514}
   m_Layer: 0
   m_Name: SmallHead
   m_TagString: Head
@@ -296,15 +279,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9963185, y: 0.096986115, z: 1}
   m_Center: {x: 0.0039489567, y: 0.49703607, z: 0}
---- !u!114 &2415601127645428514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3300643480401241231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25e4cbd54165fa446a72be6dffbf47b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
