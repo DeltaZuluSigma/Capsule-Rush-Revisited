@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &3896065055590127536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8136782579533291957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6922d40f689dd34bb8984c3bdeaad2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &8352134242079928802
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 217040786478970481, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787015797019, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787289395274, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787289395274, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787289395274, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787289395274, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787289395274, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787289395274, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787289395274, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787289395274, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787289395274, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787289395274, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787289395274, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787289395284, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787289395284, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: respawnPoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787289395287, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_Name
+      value: UpDown
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787289395287, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787335437274, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787407263727, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787455550721, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787455550724, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d847bf022e7625342a2aa3ab6fa971c7, type: 2}
+    - target: {fileID: 217040787455550842, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787455550842, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: respawnPoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787497144915, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787656948386, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787818375825, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040787946663100, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 217040788130194295, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6851323543136017813, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+--- !u!1 &8136782579533291957 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 217040787289395287, guid: 2c7bfb783b3cb8f489a38730202675cc, type: 3}
+  m_PrefabInstance: {fileID: 8352134242079928802}
+  m_PrefabAsset: {fileID: 0}
