@@ -16,17 +16,8 @@ public class Stomp : MonoBehaviour
         //Instantiate(SmallEnemyPrefab, loc, Quaternion.identity);
         //Destroy(gameObject);
         //Destroy(this.gameObject);
-        //Debug.Log("si");
-
-      
-
-
-        
-        //fix capsule coolider size
         if (col.GetComponent<Collider>().tag == "Foot" && this.GetComponent<Collider>().tag == "Head")
         {
-            Debug.Log(col.GetComponent<Collider>().tag);
-            Debug.Log(this.GetComponent<Collider>().tag);
             Destroy(this.gameObject);
         }
         

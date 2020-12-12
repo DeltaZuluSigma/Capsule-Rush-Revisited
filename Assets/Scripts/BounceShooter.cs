@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MedEnemy : MonoBehaviour
+public class BounceShooter : MonoBehaviour
 {
-    public GameObject EnemyLaser;
+    public GameObject FireBall;
     private int lives;
     private int maxLives;
     private Transform target;
@@ -25,7 +25,7 @@ public class MedEnemy : MonoBehaviour
     {
         //Debug.Log (this.transform.childCount);
         //this.transform.childCount prints the current number of children of the object not including the parent, it will be 1 when it is active and 0 when not since the cylinder is a child of the sphere
-        
+
 
         if (this.transform.childCount == 0)//checks if the childs are dead and if they are it will destory the object
         {
@@ -52,8 +52,8 @@ public class MedEnemy : MonoBehaviour
                 if (coolDownTimer == 0)
                 {
                     //Debug.Log(this.lives);
-                    Instantiate(EnemyLaser, this.transform.position, Quaternion.identity);//makes the lasers if the cooldown is done
-                    GameObject l = Instantiate(EnemyLaser) as GameObject;
+                    Instantiate(FireBall, this.transform.position, Quaternion.identity);//makes the lasers if the cooldown is done
+                    GameObject l = Instantiate(FireBall) as GameObject;
                     coolDownTimer = coolDown;//resets cooldown
                     //Debug.Log("?");
                 }
@@ -68,7 +68,7 @@ public class MedEnemy : MonoBehaviour
         //Debug.Log("c");
         if (col.gameObject.tag == "Ground")
         {
-            
+
         }
         if (col.GetComponent<Collider>().tag == "Laser")//changed to Laser
         {
@@ -90,9 +90,9 @@ public class MedEnemy : MonoBehaviour
 
         foreach (Renderer r in GetComponentsInChildren<Renderer>())
         {
-            r.material.color = new Color(120f/255f,0,128f/255f);
+            r.material.color = new Color(120f / 255f, 0, 128f / 255f);
         }
         //Debug.Log("c");
     }
-    
+
 }

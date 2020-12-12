@@ -5,6 +5,7 @@ using UnityEngine;
 public class LargeEnemy : MonoBehaviour
 {
 
+    public GameObject Tongue;
     private int lives;
     private int maxLives;
     private Transform target;
@@ -38,6 +39,14 @@ public class LargeEnemy : MonoBehaviour
         else
         {
             if (transform.position.x >= (target.position.x - 15) && transform.position.x <= (target.position.x + 15)) {
+
+                if (transform.position.x >= (target.position.x - 8) && transform.position.x <= (target.position.x + 8)) {
+                    if (coolDownTimer >= 0.75f)
+                    {
+                        Instantiate(Tongue, this.transform.position, Quaternion.identity);
+                    }
+                }
+
                 if (coolDownTimer > 0)
                 {
                     coolDownTimer -= Time.deltaTime;
@@ -80,14 +89,27 @@ public class LargeEnemy : MonoBehaviour
 
         if (col.GetComponent<Collider>().tag == "Laser")
         {
+            foreach (Renderer r in GetComponentsInChildren<Renderer>())
+            {
+                r.material.color = Color.red;
+            }
             this.lives--;
-        }
-        if (col.GetComponent<Collider>().tag == "Ground")
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y + 1.47f, transform.position.z);
+            StartCoroutine(delay());
+
         }
 
     }
 
+    IEnumerator delay()
+    {
+
+        yield return new WaitForSeconds(0.5f);
+
+        foreach (Renderer r in GetComponentsInChildren<Renderer>())
+        {
+            r.material.color = new Color(25f / 255f, 0, 221f / 255f);
+        }
+        //Debug.Log("c");
+    }
 
 }
