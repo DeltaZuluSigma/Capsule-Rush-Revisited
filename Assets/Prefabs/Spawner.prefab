@@ -47,3 +47,4 @@ MonoBehaviour:
   MedEnemyPrefab: {fileID: 8513494208640172350, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
   LargeEnemyPrefab: {fileID: 2291527981800197011, guid: e974fe3cf0cd9a544a6c3263e304b935, type: 3}
   TeleExplosion: {fileID: 697203762198716625, guid: aac1db9f591066d4495e60280672f224, type: 3}
+  shooter: {fileID: 8202093015078237034, guid: 5b48100ad29eae94aa485500b0905e7d, type: 3}

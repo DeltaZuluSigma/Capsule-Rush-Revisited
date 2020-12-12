@@ -8,55 +8,43 @@ public class Spawn : MonoBehaviour
     public GameObject MedEnemyPrefab;
     public GameObject LargeEnemyPrefab;
     public GameObject TeleExplosion;
-    //public GameObject shooter;
-    private float coolDown = 20;//this is in seconds can be switched for later use if some other itme is prefered 
+    public GameObject shooter;
+    private int i = 0;//this is in seconds can be switched for later use if some other itme is prefered 
     private float coolDownTimer=0;
 
     //spawner location randomise which enemy is spawned and where
 
     void FixedUpdate()
     {
-        if (coolDownTimer > 0)
-        {
-            coolDownTimer -= Time.deltaTime;
-        }
-        if (coolDownTimer < 0)
-        {
-            coolDownTimer = 0;
-        }
-
-        if (coolDownTimer == 0)
+        if (i == 0)
         {
 
-            System.Random rnd = new System.Random();
-            int rand = rnd.Next(99);
+                System.Random rnd = new System.Random();
+                int rand = rnd.Next(99);
 
-            if (rand < 20)
-            {
-                Instantiate(SmallEnemyPrefab, transform.position, Quaternion.identity);
-            }
-            else if (rand > 20 && rand < 40)
-            {
-                Instantiate(MedEnemyPrefab, transform.position, Quaternion.identity);
-            }
-            else if (rand > 40 && rand < 60)
-            {
-                Instantiate(LargeEnemyPrefab, transform.position, Quaternion.identity);
-            }
-            else if (rand > 60 && rand < 80)
-            {
-                Instantiate(TeleExplosion, transform.position, Quaternion.identity);
-            }
-            else
-            {
+                if (rand < 20)
+                {
+                    Instantiate(SmallEnemyPrefab, transform.position, Quaternion.identity);
+                }
+                else if (rand > 20 && rand < 40)
+                {
+                    Instantiate(MedEnemyPrefab, transform.position, Quaternion.identity);
+                }
+                else if (rand > 40 && rand < 60)
+                {
+                    Instantiate(LargeEnemyPrefab, transform.position, Quaternion.identity);
+                }
+                else if (rand > 60 && rand < 80)
+                {
+                    Instantiate(TeleExplosion, transform.position, Quaternion.identity);
+                }
+                else
+                {
+                    Instantiate(shooter, transform.position, Quaternion.identity);
+                }
+            i++;
 
-                //Instantiate(shooter, transform.position, Quaternion.identity);
-                Debug.Log("c");
-            }
-            coolDownTimer = coolDown;
         }
-        
-        
     }
     
 }

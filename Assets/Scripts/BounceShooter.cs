@@ -90,7 +90,7 @@ public class BounceShooter : MonoBehaviour
 
         foreach (Renderer r in GetComponentsInChildren<Renderer>())
         {
-            r.material.color = new Color(120f / 255f, 0, 128f / 255f);
+            r.material.color = new Color(65f / 255f, 65f / 255f, 75f / 255f);
         }
         //Debug.Log("c");
     }

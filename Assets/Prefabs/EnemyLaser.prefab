@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1252302058633602345}
   m_Layer: 0
   m_Name: EnemyLaser
-  m_TagString: EnemyLaser
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 3448971605699734359}
   m_Layer: 0
   m_Name: Laser
-  m_TagString: EnemyLaser
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,7 +121,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 976b31720675c1a47be763ebf89dc566, type: 2}
+  - {fileID: 2100000, guid: 1c57d9d7a20edd1488a70a045968a885, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

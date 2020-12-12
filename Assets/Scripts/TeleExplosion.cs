@@ -14,6 +14,9 @@ public class TeleExplosion : MonoBehaviour
     private float speed;
     private int tele;
     public Transform explosion;
+    private float power = 50000.0f;
+    private float radius = 20.0f;
+    private float upforce = 1.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +49,7 @@ public class TeleExplosion : MonoBehaviour
                 if (transform.position.x >= (target.position.x - 5) && transform.position.x <= (target.position.x + 5))
                 {
                     StartCoroutine(explosionDelay());
-                    tele = 0;
+                   tele = 0;
                 }
 
                     if (coolDownTimer > 0)
@@ -102,6 +105,8 @@ public class TeleExplosion : MonoBehaviour
 
     }
 
+    
+
     IEnumerator delay()
     {
 
@@ -126,6 +131,15 @@ public class TeleExplosion : MonoBehaviour
         yield return new WaitForSeconds(5f);
         //Debug.Log("b");
         GameObject exploder = ((Transform)Instantiate(explosion, this.transform.position, this.transform.rotation)).gameObject;
+        Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
+        foreach (Collider hit in colliders)
+        {
+            Rigidbody rb = hit.GetComponent<Rigidbody>();
+            if (rb != null && rb.tag == "Player")
+            {
+                rb.AddExplosionForce(power, transform.position, radius);
+            }
+        }
         Destroy(exploder, 2.0f);
         Destroy(this.gameObject);
         //set some kind of call to player object to make player know of explosion

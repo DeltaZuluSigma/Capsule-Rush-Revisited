@@ -27,7 +27,7 @@ public class Tongue : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.GetComponent<Collider>().tag == "Enemy" || col.GetComponent<Collider>().tag == "Head" || col.GetComponent<Collider>().tag == "EnemyLaser" || col.GetComponent<Collider>().tag == "Obstacles" || col.GetComponent<Collider>().tag == "Spawner")
+        if (col.GetComponent<Collider>().tag == "Enemy" || col.GetComponent<Collider>().tag == "Head" || col.GetComponent<Collider>().tag == "EnemyLaser" || col.GetComponent<Collider>().tag == "Obstacle" || col.GetComponent<Collider>().tag == "Spawner")
         {
 
         }
