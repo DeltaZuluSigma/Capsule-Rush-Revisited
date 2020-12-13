@@ -5,14 +5,17 @@ using UnityEngine;
 public class MoveBackandForth : MonoBehaviour
 {
     public int direction = 1;
-    public Vector3 posPoint;
-    public Vector3 negPoint;
-
+    public Vector3 Movement;
     public float speed = 3f;
+
+    private Vector3 OriginPoint;
+    private Vector3 DestinationPoint;
 
     // Start is called before the first frame update
     void Start()
     {
+        OriginPoint = this.transform.position;
+        DestinationPoint = OriginPoint + Movement;
     }
 
     // Update is called once per frame
@@ -20,26 +23,26 @@ public class MoveBackandForth : MonoBehaviour
     {
         if (direction == 1)
         {
-            if(transform.position != posPoint)
+            if(transform.position != OriginPoint)
             {
-                transform.position = Vector3.MoveTowards(transform.position, posPoint, speed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, OriginPoint, speed * Time.deltaTime);
             }
             else
             {
                 direction = 0;
-                transform.position = Vector3.MoveTowards(transform.position, negPoint, speed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, DestinationPoint, speed * Time.deltaTime);
             }
         }
         else if (direction == 0)
         {
-            if(transform.position != negPoint)
+            if(transform.position != DestinationPoint)
             {
-                transform.position = Vector3.MoveTowards(transform.position, negPoint, speed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, DestinationPoint, speed * Time.deltaTime);
             }
             else
             {
                 direction = 1;
-                transform.position = Vector3.MoveTowards(transform.position, posPoint, speed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, OriginPoint, speed * Time.deltaTime);
             }
         }
     }

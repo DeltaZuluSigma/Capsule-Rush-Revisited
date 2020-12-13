@@ -679,8 +679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 0
-  posPoint: {x: 40, y: 0, z: 0}
-  negPoint: {x: 25, y: 0, z: 0}
+  Movement: {x: -17, y: 0, z: 0}
   speed: 4
 --- !u!1 &9142218647296527387
 GameObject:
@@ -791,8 +790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 1
-  posPoint: {x: 5, y: 0, z: 0}
-  negPoint: {x: 5, y: 10, z: 0}
+  Movement: {x: 0, y: 10, z: 0}
   speed: 4
 --- !u!1 &9142218647747815796
 GameObject:
