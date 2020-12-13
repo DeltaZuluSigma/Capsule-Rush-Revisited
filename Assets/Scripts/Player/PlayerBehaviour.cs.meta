@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream:Assets/Scripts/Rotate.cs.meta
-guid: a49eb7660b2c74a4281b2f48fc86de8a
-=======
-guid: f923642ab46c1416aa9246bc06d557e8
->>>>>>> Stashed changes:Assets/Scripts/Player/Laser.cs.meta
+guid: 905469e00e5314d30a9119a357cd93d2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
