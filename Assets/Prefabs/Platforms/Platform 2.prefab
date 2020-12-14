@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6790901400266821120}
   - component: {fileID: 6790901400266821123}
   - component: {fileID: 6790901400266821122}
-  - component: {fileID: 6790901400266821121}
+  - component: {fileID: 5363579678685151311}
   m_Layer: 0
   m_Name: Moving #4
   m_TagString: Untagged
@@ -96,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6790901400266821121
+--- !u!114 &5363579678685151311
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,11 +105,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6790901400266821124}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b15e7e00699778f4a94ac3e402f9fbac, type: 3}
+  m_Script: {fileID: 11500000, guid: e1c0e29e0a456da4d99ca1c3aded1f57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 0.5
-  direction: r
+  SmallEnemyPrefab: {fileID: 356447978620613801, guid: 638469d344af1814e970052925528209, type: 3}
+  MedEnemyPrefab: {fileID: 8513494208640172350, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
+  LargeEnemyPrefab: {fileID: 2291527981800197011, guid: e974fe3cf0cd9a544a6c3263e304b935, type: 3}
+  TeleExplosion: {fileID: 697203762198716625, guid: aac1db9f591066d4495e60280672f224, type: 3}
+  shooter: {fileID: 8202093015078237034, guid: 5b48100ad29eae94aa485500b0905e7d, type: 3}
 --- !u!1 &6790901400671686094
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,6 +492,7 @@ GameObject:
   - component: {fileID: 6790901402142678255}
   - component: {fileID: 6790901402142678254}
   - component: {fileID: 6790901402142678241}
+  - component: {fileID: 8819645111152535186}
   m_Layer: 0
   m_Name: End
   m_TagString: Untagged
@@ -572,6 +576,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8819645111152535186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6790901402142678243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1c0e29e0a456da4d99ca1c3aded1f57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SmallEnemyPrefab: {fileID: 356447978620613801, guid: 638469d344af1814e970052925528209, type: 3}
+  MedEnemyPrefab: {fileID: 8513494208640172350, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
+  LargeEnemyPrefab: {fileID: 2291527981800197011, guid: e974fe3cf0cd9a544a6c3263e304b935, type: 3}
+  TeleExplosion: {fileID: 697203762198716625, guid: aac1db9f591066d4495e60280672f224, type: 3}
+  shooter: {fileID: 8202093015078237034, guid: 5b48100ad29eae94aa485500b0905e7d, type: 3}
 --- !u!1 &6790901402228856770
 GameObject:
   m_ObjectHideFlags: 0

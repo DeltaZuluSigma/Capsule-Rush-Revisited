@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 1025493731045447268}
   - component: {fileID: 1025493731045447275}
   - component: {fileID: 1025493731045447274}
+  - component: {fileID: 6384673497841774984}
   m_Layer: 0
   m_Name: Stationary#2
   m_TagString: Untagged
@@ -190,6 +191,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6384673497841774984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025493731045447272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1c0e29e0a456da4d99ca1c3aded1f57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SmallEnemyPrefab: {fileID: 356447978620613801, guid: 638469d344af1814e970052925528209, type: 3}
+  MedEnemyPrefab: {fileID: 8513494208640172350, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
+  LargeEnemyPrefab: {fileID: 2291527981800197011, guid: e974fe3cf0cd9a544a6c3263e304b935, type: 3}
+  TeleExplosion: {fileID: 697203762198716625, guid: aac1db9f591066d4495e60280672f224, type: 3}
+  shooter: {fileID: 8202093015078237034, guid: 5b48100ad29eae94aa485500b0905e7d, type: 3}
 --- !u!1 &2507897124247152594
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,6 +766,7 @@ GameObject:
   - component: {fileID: 6878882715030698378}
   - component: {fileID: 6878882715030698389}
   - component: {fileID: 6878882715030698388}
+  - component: {fileID: 8662257655951537861}
   m_Layer: 0
   m_Name: Stationary#4
   m_TagString: Untagged
@@ -831,6 +850,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8662257655951537861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6878882715030698390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1c0e29e0a456da4d99ca1c3aded1f57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SmallEnemyPrefab: {fileID: 356447978620613801, guid: 638469d344af1814e970052925528209, type: 3}
+  MedEnemyPrefab: {fileID: 8513494208640172350, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
+  LargeEnemyPrefab: {fileID: 2291527981800197011, guid: e974fe3cf0cd9a544a6c3263e304b935, type: 3}
+  TeleExplosion: {fileID: 697203762198716625, guid: aac1db9f591066d4495e60280672f224, type: 3}
+  shooter: {fileID: 8202093015078237034, guid: 5b48100ad29eae94aa485500b0905e7d, type: 3}
 --- !u!1 &6878882716453622794
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,6 +879,7 @@ GameObject:
   - component: {fileID: 6878882716453622798}
   - component: {fileID: 6878882716453622793}
   - component: {fileID: 6878882716453622792}
+  - component: {fileID: 7131895829455572102}
   m_Layer: 0
   m_Name: Stationary#5
   m_TagString: Untagged
@@ -926,3 +963,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7131895829455572102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6878882716453622794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1c0e29e0a456da4d99ca1c3aded1f57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SmallEnemyPrefab: {fileID: 356447978620613801, guid: 638469d344af1814e970052925528209, type: 3}
+  MedEnemyPrefab: {fileID: 8513494208640172350, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
+  LargeEnemyPrefab: {fileID: 2291527981800197011, guid: e974fe3cf0cd9a544a6c3263e304b935, type: 3}
+  TeleExplosion: {fileID: 697203762198716625, guid: aac1db9f591066d4495e60280672f224, type: 3}
+  shooter: {fileID: 8202093015078237034, guid: 5b48100ad29eae94aa485500b0905e7d, type: 3}

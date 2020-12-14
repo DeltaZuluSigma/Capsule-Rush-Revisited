@@ -6,7 +6,6 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 2.0f;
     public float jumpForce = 2.0f;
-    public DurationBar db;
     private Vector3 jump;
     private bool isGrounded;
     private Rigidbody rb;
@@ -26,9 +25,6 @@ public class PlayerMovement : MonoBehaviour
 		if(Input.GetKeyDown("w") & isGrounded) {
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
             isGrounded = false;
-        }
-		if(Input.GetKey("s")) {
-            db.current = db.max;
         }
     }
 

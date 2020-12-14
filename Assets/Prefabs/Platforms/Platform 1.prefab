@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 4194707596038388766}
   - component: {fileID: 4194707596038388767}
   - component: {fileID: 4194707596038388764}
+  - component: {fileID: 4713460827781806878}
   m_Layer: 0
   m_Name: End
   m_TagString: Untagged
@@ -190,6 +191,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4713460827781806878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4194707596038388770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1c0e29e0a456da4d99ca1c3aded1f57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SmallEnemyPrefab: {fileID: 356447978620613801, guid: 638469d344af1814e970052925528209, type: 3}
+  MedEnemyPrefab: {fileID: 8513494208640172350, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
+  LargeEnemyPrefab: {fileID: 2291527981800197011, guid: e974fe3cf0cd9a544a6c3263e304b935, type: 3}
+  TeleExplosion: {fileID: 697203762198716625, guid: aac1db9f591066d4495e60280672f224, type: 3}
+  shooter: {fileID: 8202093015078237034, guid: 5b48100ad29eae94aa485500b0905e7d, type: 3}
 --- !u!1 &4194707596619572708
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,6 +221,7 @@ GameObject:
   - component: {fileID: 4194707596619572705}
   - component: {fileID: 4194707596619572710}
   - component: {fileID: 4194707596619572707}
+  - component: {fileID: 4181095045578849054}
   m_Layer: 0
   m_Name: Moving #2
   m_TagString: Untagged
@@ -301,6 +320,23 @@ MonoBehaviour:
   direction: 0
   Movement: {x: -8, y: 0, z: 0}
   speed: 3
+--- !u!114 &4181095045578849054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4194707596619572708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1c0e29e0a456da4d99ca1c3aded1f57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SmallEnemyPrefab: {fileID: 356447978620613801, guid: 638469d344af1814e970052925528209, type: 3}
+  MedEnemyPrefab: {fileID: 8513494208640172350, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
+  LargeEnemyPrefab: {fileID: 2291527981800197011, guid: e974fe3cf0cd9a544a6c3263e304b935, type: 3}
+  TeleExplosion: {fileID: 697203762198716625, guid: aac1db9f591066d4495e60280672f224, type: 3}
+  shooter: {fileID: 8202093015078237034, guid: 5b48100ad29eae94aa485500b0905e7d, type: 3}
 --- !u!1 &4194707596902432384
 GameObject:
   m_ObjectHideFlags: 0

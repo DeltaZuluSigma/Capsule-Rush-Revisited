@@ -18,29 +18,27 @@ public class Spawn : MonoBehaviour
     {
         if (i == 0)
         {
-
-                System.Random rnd = new System.Random();
-                int rand = rnd.Next(99);
+                int rand = RandNum.GetRandomNumber(0,99);
 
                 if (rand < 20)
                 {
-                    Instantiate(SmallEnemyPrefab, transform.position, Quaternion.identity);
+                    Instantiate(SmallEnemyPrefab, new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z), Quaternion.identity);
                 }
                 else if (rand > 20 && rand < 40)
                 {
-                    Instantiate(MedEnemyPrefab, transform.position, Quaternion.identity);
+                    Instantiate(MedEnemyPrefab, new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z), Quaternion.identity);
                 }
                 else if (rand > 40 && rand < 60)
                 {
-                    Instantiate(LargeEnemyPrefab, transform.position, Quaternion.identity);
+                    Instantiate(LargeEnemyPrefab, new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z), Quaternion.identity);
                 }
                 else if (rand > 60 && rand < 80)
                 {
-                    Instantiate(TeleExplosion, transform.position, Quaternion.identity);
+                    Instantiate(TeleExplosion, new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z), Quaternion.identity);
                 }
                 else if(rand > 80 && rand < 90)
                 {
-                    Instantiate(shooter, transform.position, Quaternion.identity);
+                    Instantiate(shooter, new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z), Quaternion.identity);
                 }
              else
                 {
