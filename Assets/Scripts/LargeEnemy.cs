@@ -12,6 +12,7 @@ public class LargeEnemy : MonoBehaviour
     private float coolDown = 5;//this is in seconds can be switched for later use if some other itme is prefered 
     private float coolDownTimer;
     private float speed;
+    private int teleCount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,7 @@ public class LargeEnemy : MonoBehaviour
         maxLives = 3;
         lives = maxLives;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        coolDownTimer = 2;
+        coolDownTimer = 10;
         speed = 1;
     }
 
@@ -38,7 +39,9 @@ public class LargeEnemy : MonoBehaviour
         }
         else
         {
-            if (transform.position.x >= (target.position.x - 15) && transform.position.x <= (target.position.x + 15)) {
+            if (transform.position.x >= (target.position.x - 15) && transform.position.x <= (target.position.x + 15) ) {
+
+                
 
                 if (transform.position.x >= (target.position.x - 8) && transform.position.x <= (target.position.x + 8)) {
                     if (coolDownTimer >= 0.75f)
@@ -56,12 +59,11 @@ public class LargeEnemy : MonoBehaviour
                     coolDownTimer = 0;
                 }
 
-                if (coolDownTimer == 0)
+                if (coolDownTimer == 0 && teleCount < 3)
                 {
                     transform.position = new Vector3(target.position.x + 2, target.position.y + 1.47f, target.position.z);//x and z can be changed accordingly
-                                                                                                                          //Debug.Log(coolDownTimer);
+                    teleCount++;                                                                                                //Debug.Log(coolDownTimer);
                     coolDownTimer = coolDown;
-                    //Debug.Log(coolDownTimer);
                 }
 
                 transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
