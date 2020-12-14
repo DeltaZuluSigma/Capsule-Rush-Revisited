@@ -6,7 +6,7 @@ public class LargeEnemy : MonoBehaviour
 {
 
     public GameObject Tongue;
-    private int lives;
+    public int lives;
     private int maxLives;
     private Transform target;
     private float coolDown = 5;//this is in seconds can be switched for later use if some other itme is prefered 

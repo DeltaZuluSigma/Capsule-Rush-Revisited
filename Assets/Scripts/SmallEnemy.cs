@@ -6,7 +6,7 @@ public class SmallEnemy : MonoBehaviour
 {
 
 
-    private int lives;
+    public int lives;
     private int maxLives;
     private Transform target;
     public float speed;

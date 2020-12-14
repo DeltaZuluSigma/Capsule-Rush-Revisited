@@ -5,8 +5,8 @@ using UnityEngine;
 public class TeleExplosion : MonoBehaviour
 {
 
-   
-    private int lives;
+
+    public int lives;
     private int maxLives;
     private Transform target;
     private float coolDown = 10;//this is in seconds can be switched for later use if some other itme is prefered 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class BounceShooter : MonoBehaviour
 {
     public GameObject FireBall;
-    private int lives;
+    public int lives;
     private int maxLives;
     private Transform target;
     private float coolDown = 1f;//this is in seconds can be switched for later use if some other itme is prefered 
