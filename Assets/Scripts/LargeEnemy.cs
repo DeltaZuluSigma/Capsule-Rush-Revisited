@@ -39,7 +39,7 @@ public class LargeEnemy : MonoBehaviour
         }
         else
         {
-            if (transform.position.x >= (target.position.x - 15) && transform.position.x <= (target.position.x + 15) ) {
+            if (transform.position.x >= (target.position.x - 10) && transform.position.x <= (target.position.x + 10) ) {
 
                 
 
