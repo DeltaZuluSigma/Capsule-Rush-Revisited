@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Obstacle
+  - Spawner
+  - Enemy
+  - Head
+  - Laser
+  - Death
   layers:
   - Default
   - TransparentFX

@@ -13,6 +13,6 @@ public class FollowingCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = GameObject.Find("Player").transform.position + new Vector3(0, 1, -10);
+        transform.position = GameObject.Find("Player").transform.position + new Vector3(0, 3, -10);
     }
 }
