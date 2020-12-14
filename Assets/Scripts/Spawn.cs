@@ -28,15 +28,15 @@ public class Spawn : MonoBehaviour
                 {
                     Instantiate(MedEnemyPrefab, new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z), Quaternion.identity);
                 }
-                else if (rand > 40 && rand < 60)
+                else if (rand > 40 && rand < 45)
                 {
                     Instantiate(LargeEnemyPrefab, new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z), Quaternion.identity);
                 }
-                else if (rand > 60 && rand < 80)
+                else if (rand > 45 && rand < 70)
                 {
                     Instantiate(TeleExplosion, new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z), Quaternion.identity);
                 }
-                else if(rand > 80 && rand < 90)
+                else if(rand > 70 && rand < 90)
                 {
                     Instantiate(shooter, new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z), Quaternion.identity);
                 }

@@ -14,7 +14,7 @@ public class TeleExplosion : MonoBehaviour
     private float speed;
     private int tele;
     public Transform explosion;
-    private float power = 50000.0f;
+    private float power = 500.0f;
     private float radius = 20.0f;
     private float upforce = 1.0f;
 
