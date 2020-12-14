@@ -32,7 +32,7 @@ public class FireBall : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        if ( col.gameObject.tag == "Head" || col.gameObject.tag == "EnemyLaser" || col.gameObject.tag == "Obstacle" || col.gameObject.tag == "Spawner"|| col.gameObject.tag == "Ground"|| col.gameObject.layer == LayerMask.NameToLayer("ground"))
+        if (col.gameObject.tag == "Enemy"|| col.gameObject.tag == "Head" || col.gameObject.tag == "EnemyLaser" || col.gameObject.tag == "Obstacle" || col.gameObject.tag == "Spawner"|| col.gameObject.tag == "Ground"|| col.gameObject.layer == LayerMask.NameToLayer("ground"))
         {
             if (col.gameObject.tag == "Obstacle" || col.gameObject.tag == "Spawner" || col.gameObject.tag == "Ground"|| col.gameObject.layer == LayerMask.NameToLayer("ground"))
             {

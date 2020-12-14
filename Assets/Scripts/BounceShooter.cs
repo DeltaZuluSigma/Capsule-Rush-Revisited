@@ -53,7 +53,7 @@ public class BounceShooter : MonoBehaviour
                 {
                     //Debug.Log(this.lives);
                     Instantiate(FireBall, this.transform.position, Quaternion.identity);//makes the lasers if the cooldown is done
-                    GameObject l = Instantiate(FireBall) as GameObject;
+                    //GameObject l = Instantiate(FireBall) as GameObject;
                     coolDownTimer = coolDown;//resets cooldown
                     //Debug.Log("?");
                 }
