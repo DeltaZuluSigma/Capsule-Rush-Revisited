@@ -42,11 +42,19 @@ public class Spawn : MonoBehaviour
                 {
                     Instantiate(shooter, transform.position, Quaternion.identity);
                 }
+<<<<<<< HEAD
             else
             {
 
             }
             i++;
+=======
+             else
+                {
+
+                }
+             i++;
+>>>>>>> 15b8ab97dceb319bc2363101e065c003ca57a476
 
         }
     }
