@@ -28,6 +28,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bounce Shooter
       objectReference: {fileID: 0}
+    - target: {fileID: 8513494208640172350, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 8513494208640172351, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.146409
@@ -71,6 +75,10 @@ PrefabInstance:
     - target: {fileID: 8513494208640172351, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513494208912631947, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 8513494208912631950, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
       propertyPath: m_Materials.Array.data[0]

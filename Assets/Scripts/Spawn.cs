@@ -38,10 +38,14 @@ public class Spawn : MonoBehaviour
                 {
                     Instantiate(TeleExplosion, transform.position, Quaternion.identity);
                 }
-                else
+                else if(rand > 80 && rand < 90)
                 {
                     Instantiate(shooter, transform.position, Quaternion.identity);
                 }
+            else
+            {
+
+            }
             i++;
 
         }
