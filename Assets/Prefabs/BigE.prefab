@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 194855376297243761}
   - component: {fileID: 1179286690616454065}
   - component: {fileID: 7798117598059425967}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: BigHead
   m_TagString: Head
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2698575532b12944e9aee7048e28b2a5, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,9 +108,10 @@ GameObject:
   - component: {fileID: 4549758049781216591}
   - component: {fileID: 4477058792300918801}
   - component: {fileID: 5070262342159152723}
-  m_Layer: 0
+  - component: {fileID: 7734305402300715717}
+  m_Layer: 13
   m_Name: BigE
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tongue: {fileID: 2579778074897735430, guid: 97aecef6d66be114a958fe7f9d919a0d, type: 3}
+  lives: 0
 --- !u!114 &4477058792300918801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +170,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.7822777, y: 3.4250617, z: 1}
   m_Center: {x: 0.01955682, y: -0.8213923, z: 0}
+--- !u!54 &7734305402300715717
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2291527981800197011}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
 --- !u!1 &9221518838054267897
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +198,7 @@ GameObject:
   - component: {fileID: 2301942135123302344}
   - component: {fileID: 7432623135059281435}
   - component: {fileID: 2731164694459800441}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Body
   m_TagString: Enemy
   m_Icon: {fileID: 0}

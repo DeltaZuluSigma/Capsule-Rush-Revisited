@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 5512541662914914273}
   - component: {fileID: 2570595318340936961}
   - component: {fileID: 5001858931084370385}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pInvincibility
-  m_TagString: Untagged
+  m_TagString: pInvincible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

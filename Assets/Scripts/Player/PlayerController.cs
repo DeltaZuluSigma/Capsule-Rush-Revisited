@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        if(col.gameObject.tag == "Ground")
+        if(col.gameObject.layer == LayerMask.NameToLayer("ground"))
         {
             isGrounded = true;
         }
@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionExit(Collision col)
     {
-        if(col.gameObject.tag == "Ground")
+        if(col.gameObject.layer == LayerMask.NameToLayer("ground"))
         {
             isGrounded = false;
         }

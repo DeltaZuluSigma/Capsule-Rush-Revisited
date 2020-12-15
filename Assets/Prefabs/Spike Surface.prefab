@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 217040786478970485}
   - component: {fileID: 217040786478970484}
   - component: {fileID: 217040786478970487}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: S1
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 217040787015797023}
   - component: {fileID: 217040787015797022}
   - component: {fileID: 217040787015797017}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: S6
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 217040787289395274}
   - component: {fileID: 217040787289395285}
   - component: {fileID: 6851323543136017813}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Spike Surface
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 217040787335437278}
   - component: {fileID: 217040787335437273}
   - component: {fileID: 217040787335437272}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: S5
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 217040787407263715}
   - component: {fileID: 217040787407263714}
   - component: {fileID: 217040787407263725}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: S4
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -459,7 +459,7 @@ GameObject:
   - component: {fileID: 217040787455550725}
   - component: {fileID: 217040787455550724}
   - component: {fileID: 217040787455550727}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Base
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 217040787497144919}
   - component: {fileID: 217040787497144918}
   - component: {fileID: 217040787497144913}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: S9
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: 217040787656948390}
   - component: {fileID: 217040787656948385}
   - component: {fileID: 217040787656948384}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: S8
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -744,7 +744,7 @@ GameObject:
   - component: {fileID: 217040787818375829}
   - component: {fileID: 217040787818375828}
   - component: {fileID: 217040787818375831}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: S2
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -839,7 +839,7 @@ GameObject:
   - component: {fileID: 217040787946663088}
   - component: {fileID: 217040787946663091}
   - component: {fileID: 217040787946663090}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: S3
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -934,7 +934,7 @@ GameObject:
   - component: {fileID: 217040788130194283}
   - component: {fileID: 217040788130194282}
   - component: {fileID: 217040788130194293}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: S7
   m_TagString: Obstacle
   m_Icon: {fileID: 0}

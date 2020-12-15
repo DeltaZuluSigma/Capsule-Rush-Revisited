@@ -5,8 +5,8 @@ using UnityEngine;
 public class TeleExplosion : MonoBehaviour
 {
 
-   
-    private int lives;
+
+    public int lives;
     private int maxLives;
     private Transform target;
     private float coolDown = 10;//this is in seconds can be switched for later use if some other itme is prefered 
@@ -14,14 +14,14 @@ public class TeleExplosion : MonoBehaviour
     private float speed;
     private int tele;
     public Transform explosion;
-    private float power = 50000.0f;
+    private float power = 500.0f;
     private float radius = 20.0f;
     private float upforce = 1.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        maxLives = 2;
+        maxLives = 1;
         lives = maxLives;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         coolDownTimer = 5;

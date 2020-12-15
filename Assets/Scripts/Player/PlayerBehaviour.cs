@@ -2,14 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour
 {
     public PlayerController controller;
-    public GameObject spawnPoint;                // reference to spawn in first gen block of level
+    public GameObject[] spawnPoint = new GameObject[1];                // reference to spawn in first gen block of level
     public LaserGun laserGun;               // ref to players laser gun
     public GameObject tMarker;              // place to teleport
-    public GameObject feet;
+    private GameObject t;
+    public GameObject foot;
+
+    public GameObject nextLevel;
+    public GameObject mmButton;
+
+    public Material[] mats = new Material[7];
 
     //for death
     private bool isDead;
@@ -50,17 +57,27 @@ public class PlayerBehaviour : MonoBehaviour
     public int coins;
     private int coinChecker;
 
+    private int kills;
+
+    void Awake()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name == "Level1")
+        {
+            initializeData();
+            saveData();
+            loadData();
+        }
+        else loadData();
+    }
 
     void Start()
     {
+        spawnPoint = GameObject.FindGameObjectsWithTag("Spawn");
+
+        spawnPlayer();
 
         isDead = false;
-
-        isInvincible = false;
-        iTimer = 10.0f;
-
-        hasSpeedBoost = false;
-        sTimer = 5.0f;
 
         iLaser.enabled = false;
         iSpeed.enabled = false;
@@ -69,47 +86,41 @@ public class PlayerBehaviour : MonoBehaviour
         tInv.text = "";
         iTele.enabled = false;
         iGrav.enabled = false;
-
-        // currentGrav = GetComponent<Rigidbody>().gravityScale;
+        nextLevel.SetActive(false);
     }
 
     void FixedUpdate()
     {
         invincibleTimer();
         speedBoostTimer();
+        antiGravity();
+        teleportMarker();
 
         checkPowerUp();
+
+        changeColour();
+
+        deathCheck();
+
+        saveData();
+
+        cText.text = "x" + coins;
+        lText.text = "x" + lives;
+        dText.text = "x" + (kills + laserGun.laserKills);
+
+
     }
 
     void OnCollisionEnter(Collision col)
     {
-        setPowerUp(col.gameObject.tag);
+        if (col.gameObject.layer == LayerMask.NameToLayer("powerup"))
+            setPowerUp(col.gameObject.tag);
 
-        if(col.gameObject.GetComponent<PowerUp>())
-        {
-            Destroy(col.gameObject);
-        }
 
         if ((col.gameObject.tag == "Obstacle") && !isInvincible)
         {
-            lives--;
-            deathCheck();
-
-            if (hasSpeedBoost)
-                hasSpeedBoost = false;
-            else if (canShoot)
-                canShoot = false;
-        }
-
-        if (col.gameObject.tag == "Enemy" && !isInvincible)
-        {
-            lives--;
-            deathCheck();
-
-            if (hasSpeedBoost)
-                hasSpeedBoost = false;
-            else if (canShoot)
-                canShoot = false;
+            takeDamage();
+            StartCoroutine(Flash());
         }
 
         if (col.gameObject.tag == "Coin")
@@ -122,8 +133,41 @@ public class PlayerBehaviour : MonoBehaviour
             lives++;
         }
 
+        if(col.gameObject.tag == "Dead")
+        {
+            GameObject[] bases = new GameObject[10];
+            if (bases[0] != null)
+                this.transform.position = new Vector3(bases[0].transform.position.x, bases[0].transform.position.y + 3.0f, 0.0f);
+            else spawnPlayer();
+        }
+
+        if (col.gameObject.tag == "End")
+        {
+            mmButton.SetActive(true);
+            nextLevel.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.layer == LayerMask.NameToLayer("enemy"))
+            if (col.gameObject.tag == "Head")
+            {
+                Destroy(col.gameObject);
+                kills++;
+            }
+            else if (col.gameObject.tag == "Enemy" && !isInvincible)
+            {
+                takeDamage();
+                StartCoroutine(Flash());
+            }
+            else if (col.gameObject.tag == "Enemy" && isInvincible)
+            {
+                Destroy(col.gameObject);
+                kills++;
+            }
+    }
 
     public void deathCheck()
     {
@@ -131,8 +175,28 @@ public class PlayerBehaviour : MonoBehaviour
         {
             lives = 0;
             isDead = true;
-            respawn();
+            respawnPlayer();
         }
+    }
+
+    public void takeDamage()
+    {
+        lives--;
+        deathCheck();
+
+        if (hasSpeedBoost)
+            hasSpeedBoost = false;
+        else if (canTeleport)
+            canTeleport = false;
+        else if (canShoot)
+            canShoot = false;
+    }
+
+    IEnumerator Flash()
+    {
+        this.gameObject.GetComponent<Renderer>().material = mats[6];
+        yield return new WaitForSeconds(0.1f);
+        changeColour();
     }
 
     public void collectCoin()
@@ -144,7 +208,6 @@ public class PlayerBehaviour : MonoBehaviour
             coinChecker -= 100;
             lives++;
         }
-        cText.text = "" + coins;
     }
 
     public void setPowerUp(string tag)
@@ -156,14 +219,16 @@ public class PlayerBehaviour : MonoBehaviour
                 iLaser.enabled = true;
                 break;
 
-            case "pInvincibility":
+            case "pInvincible":
                 isInvincible = true;
                 iInv.enabled = true;
+                tInv.enabled = true;
                 break;
 
             case "pSpeedBoost":
                 hasSpeedBoost = true;
                 iSpeed.enabled = true;
+                tSpeed.enabled = true;
                 break;
 
             case "pAntiGravity":
@@ -171,13 +236,23 @@ public class PlayerBehaviour : MonoBehaviour
                 {
                     flipGrav = false;
                     iGrav.enabled = false;
-                    // FlipUp();
+                    isUpsideDown = false;
+
+                    Vector3 scale = transform.localScale;
+                    if (scale.y < 0)
+                        scale.y *= -1;
+                    transform.localScale = scale;
                 }
                 else
                 {
                     flipGrav = true;
                     iGrav.enabled = true;
-                    // FlipUp();
+                    isUpsideDown = true;
+
+                    Vector3 scale = transform.localScale;
+                    scale.y *= -1;
+                    transform.localScale = scale;
+
                 }
                 break;
 
@@ -196,7 +271,8 @@ public class PlayerBehaviour : MonoBehaviour
         checkLaserGun();
         checkInvincible();
         checkSpeedBoost();
-        //checkAntiGrav();
+        checkAntiGrav();
+        checkTeleport();
     }
 
     private void checkLaserGun()
@@ -217,7 +293,8 @@ public class PlayerBehaviour : MonoBehaviour
         {
             isInvincible = false;
             iInv.enabled = false;
-            iTimer = 10.0f;
+            tInv.enabled = false;
+            iTimer = 5.0f;
         }
     }
 
@@ -226,20 +303,22 @@ public class PlayerBehaviour : MonoBehaviour
         if (isInvincible)
         {
             iTimer -= Time.deltaTime;
-            tInv.text = "" + System.Math.Round(iTimer, 2);
+            tInv.text = "" + (int)iTimer;
         }
-        else iTimer = 10.0f;
+        else iTimer = 5.0f;
     }
 
     private void checkSpeedBoost()
     {
         if (sTimer <= 0.0f)
         {
-            controller.walkSpeed /= 2;
-            controller.runSpeed /= 2;
+            
+            controller.walkSpeed = 30;
+            controller.runSpeed = 50;
             hasSpeedBoost = false;
             iSpeed.enabled = false;
-            sTimer = 5.0f;
+            tSpeed.enabled = false;
+            sTimer = 3.1f;
         }
     }
 
@@ -247,49 +326,179 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (hasSpeedBoost)
         {
-            if (sTimer > 0.0f)
+            if (sTimer <= 3.0f)
             {
-                controller.walkSpeed *= 2;
-                controller.runSpeed *= 2;
+                controller.walkSpeed  = 60;
+                controller.runSpeed = 80;
             }
 
             sTimer -= Time.deltaTime;
-            tSpeed.text = "" + System.Math.Round(sTimer, 1);
+            tSpeed.text = "" + (int)sTimer;
         }
 
     }
 
-    /*private void checkAntiGrav()
+    private void checkAntiGrav()
     {
         if (flipGrav)
-            GetComponent<Rigidbody>().gravityScale = antiGrav;
-        else GetComponent<Rigidbody>().gravityScale = currentGrav;
-    }*/
+        {
+            controller.rigidBody.useGravity = false;
+        }
+        else
+        {
+            controller.rigidBody.useGravity = true;
+        }
+    }
 
-    /*  private void FlipUp()
-      {
-          // switch direction the player is labelled as facing
-          isUpsideDown = !isUpsideDown;
-
-          // Multiply the player's y local scale by -1.
-          Vector3 scale = transform.localScale;
-          scale.y *= -1;
-          transform.localScale = scale;
-      }*/
-
-    /* private void teleportMarker()
-     {
-         if (canTeleport)
-         {
-             GameObject t = Instantiate(tMarker) as GameObject;
-
-             t.transform.position.x += tDistance;
-         }
-     }*/
-
-
-    private void respawn()
+    private void antiGravity()
     {
-        this.transform.position = spawnPoint.transform.position;
+        if (isUpsideDown)
+        {
+            controller.rigidBody.AddForce(new Vector3(0f, antiGrav, 0f));
+            if (controller.jumpForce > 0)
+                controller.jumpForce = -controller.jumpForce;
+        }
+        else
+        {
+            if (controller.jumpForce <= 0)
+                controller.jumpForce = -controller.jumpForce;
+        }
+    }
+
+    private void teleportMarker()
+     {
+         if (canTeleport && t == null)
+         {
+            t = Instantiate(tMarker) as GameObject;
+         }
+         if(t != null)
+        t.transform.position = new Vector3(this.transform.position.x + tDistance, this.transform.position.y, 0.0f);
+    }
+
+     private void checkTeleport()
+     {
+        if(canTeleport && Input.GetKeyDown(KeyCode.T) && t != null)
+        {
+            this.transform.position = new Vector3(t.transform.position.x, t.transform.position.y + 2.0f, 0.0f);
+            canTeleport = false;
+            iTele.enabled = false;
+            Destroy(t);
+        }
+    }
+   
+
+
+    private void spawnPlayer()
+    {
+        if (spawnPoint[0] != null)
+        {
+            this.transform.position = spawnPoint[0].transform.position;
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 5f, 0.0f);
+        }
+    }
+    private void respawnPlayer()
+    {
+        if (isDead)
+        {
+            this.transform.position = spawnPoint[0].transform.position;
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 5f, 0.0f);
+            isDead = false;
+        }
+    }
+
+    public void initializeData()
+    {
+        lives = 3;
+        coins = 0;
+        kills = 0;
+
+        canShoot = false;
+        hasSpeedBoost = false;
+        isInvincible = false;
+        canTeleport = false;
+        flipGrav = false;
+
+        iTimer = 5.0f;
+        sTimer = 3.1f;
+    }
+
+    public void saveData()
+    {
+        // collectables
+        PlayerPrefs.SetInt("lives", lives);
+        PlayerPrefs.SetInt("coins", coins);
+        //power ups
+        PlayerPrefs.SetInt("pLaser", canShoot ? 1 : 0);
+        PlayerPrefs.SetInt("pSpeedBoost", hasSpeedBoost ? 1 : 0);
+        PlayerPrefs.SetInt("pInvincible", isInvincible ? 1 : 0);
+        PlayerPrefs.SetInt("pGravity", flipGrav ? 1 : 0);
+        PlayerPrefs.SetInt("pTeleport", canTeleport ? 1 : 0);
+        //timers
+        if (hasSpeedBoost == true)
+            PlayerPrefs.SetFloat("sTimer", sTimer);
+        else PlayerPrefs.SetFloat("sTimer", 0.0f);
+
+        if (isInvincible == true)
+            PlayerPrefs.SetFloat("iTimer", iTimer);
+        else PlayerPrefs.SetFloat("iTimer", 0.0f);
+    }
+
+    public void loadData()
+    {
+        // collectables
+        if (PlayerPrefs.GetInt("lives") != null)
+            lives = PlayerPrefs.GetInt("lives");
+        else lives = 3;
+
+        if (PlayerPrefs.GetInt("coins") != null)
+            coins = PlayerPrefs.GetInt("coins");
+        else coins = 0;
+
+        //power ups
+        if (PlayerPrefs.GetInt("pLaser") != null)
+            canShoot = PlayerPrefs.GetInt("pLaser") == 1 ? true : false;
+        else canShoot = false;
+
+        if (PlayerPrefs.GetInt("pSpeedBoost") != null)
+            hasSpeedBoost = PlayerPrefs.GetInt("pSpeedBoost") == 1 ? true : false;
+        else hasSpeedBoost = false;
+
+        if (PlayerPrefs.GetInt("pInvincible") != null)
+            isInvincible = PlayerPrefs.GetInt("pInvincible") == 1 ? true : false;
+        else isInvincible = false;
+
+        if (PlayerPrefs.GetInt("pGravity") != null)
+            flipGrav = PlayerPrefs.GetInt("pGravity") == 1 ? true : false;
+        else flipGrav = false;
+
+        if (PlayerPrefs.GetInt("pTeleport") != null)
+            canTeleport = PlayerPrefs.GetInt("pTeleport") == 1 ? true : false;
+        else canTeleport = false;
+
+        // timers
+        if (PlayerPrefs.GetFloat("sTimer") != null && PlayerPrefs.GetInt("pSpeedBoost") == 1)
+            sTimer = PlayerPrefs.GetFloat("sTimer");
+        else sTimer = 5.0f;
+
+        if (PlayerPrefs.GetFloat("iTimer") != null && PlayerPrefs.GetInt("pInvincible") == 1)
+            iTimer = PlayerPrefs.GetFloat("iTimer");
+        else iTimer = 3.1f;
+    }
+
+    public void changeColour()
+    {
+        if (flipGrav == true)
+            this.gameObject.GetComponent<Renderer>().material = mats[5];
+        else if (canTeleport == true)
+            this.gameObject.GetComponent<Renderer>().material = mats[4];
+        else if (isInvincible == true)
+            this.gameObject.GetComponent<Renderer>().material = mats[3];
+        else if (hasSpeedBoost == true)
+            this.gameObject.GetComponent<Renderer>().material = mats[2];
+        else if (canShoot == true)
+            this.gameObject.GetComponent<Renderer>().material = mats[1];
+        else this.gameObject.GetComponent<Renderer>().material = mats[0];
+
+        laserGun.gameObject.GetComponent<Renderer>().material = this.gameObject.GetComponent<Renderer>().material;
     }
 }

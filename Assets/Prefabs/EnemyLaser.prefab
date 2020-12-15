@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5979297227508576720}
   - component: {fileID: 1460707323726431465}
   - component: {fileID: 1252302058633602345}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: EnemyLaser
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 1940780517425886065}
   - component: {fileID: 4035755195515031197}
   - component: {fileID: 3448971605699734359}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Laser
   m_TagString: Obstacle
   m_Icon: {fileID: 0}

@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 7863224586344092140}
   - component: {fileID: 1343365411351076742}
   - component: {fileID: 8134844504749591867}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pAntiGravity
-  m_TagString: Untagged
+  m_TagString: pAntiGravity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

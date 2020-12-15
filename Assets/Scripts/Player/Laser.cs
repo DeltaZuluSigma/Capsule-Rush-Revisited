@@ -4,15 +4,73 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
-    void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "Obstacle" || col.gameObject.tag == "Wall" || col.gameObject.tag == "Ground")
-            Destroy(this.gameObject);
+    public Material material;
+    public int killShots;
+    public float timer;
 
-        if (col.gameObject.tag == "pSpeedBoost" || col.gameObject.tag == "pLaserGun" || col.gameObject.tag == "pInvincibility"
-            || col.gameObject.tag == "pAntiGravity" || col.gameObject.tag == "pTeleport" || col.gameObject.tag == "Coin" || col.gameObject.tag == "Live" || col.gameObject.tag == "Player")
+    void Start()
+    {
+        this.GetComponent<Renderer>().material = material;
+        killShots = 0;
+        timer = 5.0f;
+    }
+
+    void Update()
+    {
+        timer -= Time.deltaTime;
+
+        if(timer <= 0)
         {
-            //  Physics.IgnoreCollison(this.GetComponent<Collider>(), col.gameObject.GetComponent<Collider>());
+            Destroy(this.gameObject);
+            timer = 5.0f;
         }
-   }
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+       if (col.gameObject.layer == LayerMask.NameToLayer("enemy"))
+        {
+            killShots++;
+            /*if (col.gameObject.GetComponent<LargeEnemy>())
+            {
+                int h = col.gameObject.GetComponent<LargeEnemy>().lives;
+                if (h <= 1)
+                    killShots++;
+            }
+
+            if (col.gameObject.GetComponent<MedEnemy>())
+            {
+                int h = col.gameObject.GetComponent<MedEnemy>().lives;
+                if (h <= 1)
+                    killShots++;
+            }
+
+            if (col.gameObject.GetComponent<SmallEnemy>())
+            {
+                int h = col.gameObject.GetComponent<SmallEnemy>().lives;
+                if (h <= 1)
+                    killShots++;
+            }
+
+            if (col.gameObject.GetComponent<BounceShooter>())
+            {
+                int h = col.gameObject.GetComponent<BounceShooter>().lives;
+                if (h <= 1)
+                    killShots++;
+            }
+
+            if (col.gameObject.GetComponent<TeleExplosion>())
+            {
+                int h = col.gameObject.GetComponent<TeleExplosion>().lives;
+                if (h <= 1)
+                    killShots++;
+            }*/
+
+        }
+
+        if (col.gameObject.layer == LayerMask.NameToLayer("obstacle") || col.gameObject.layer == LayerMask.NameToLayer("ground"))
+            Destroy(this.gameObject);
+    }
+
+
 }

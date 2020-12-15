@@ -9,6 +9,19 @@ TagManager:
   - Obstacle
   - Spawner
   - Laser
+  - Live
+  - Coin
+  - pSpeedBoost
+  - pInvincible
+  - pTeleport
+  - pAntiGravity
+  - Ground
+  - Spawn
+  - Foot
+  - pLaserGun
+  - Death
+  - End
+  - Base
   layers:
   - Default
   - TransparentFX
@@ -19,12 +32,12 @@ TagManager:
   - 
   - 
   - ground
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - player
+  - powerup
+  - collectable
+  - obstacle
+  - enemy
+  - Laser
   - 
   - 
   - 
