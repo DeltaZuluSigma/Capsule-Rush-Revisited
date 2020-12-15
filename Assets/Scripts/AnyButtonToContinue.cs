@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class AnyButtonToContinue : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    public SceneChange sc;
+    
     // Update is called once per frame
     void FixedUpdate()
     {
         if (Input.anyKey)
         {
-            Debug.Log("yallah");
+            sc.Change("MainMenu");
         }
     }
 }

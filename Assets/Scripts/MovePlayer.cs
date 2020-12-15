@@ -9,6 +9,7 @@ public class MovePlayer : MonoBehaviour
     public Rigidbody rb;
     public Vector3 inputVec;
     public bool cubeGround = true;
+    public int health = 100;
 
 
 

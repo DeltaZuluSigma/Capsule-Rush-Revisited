@@ -18,6 +18,7 @@ public class TeleExplosion : MonoBehaviour
     private float radius = 20.0f;
     private float upforce = 1.0f;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -140,6 +141,7 @@ public class TeleExplosion : MonoBehaviour
                 rb.AddExplosionForce(power, transform.position, radius);
             }
         }
+        //nearbyObject.GetComponent<>;
         Destroy(exploder, 2.0f);
         Destroy(this.gameObject);
         //set some kind of call to player object to make player know of explosion
