@@ -10,7 +10,7 @@ public class MedEnemy : MonoBehaviour
     private Transform target;
     private float coolDown = 1f;//this is in seconds can be switched for later use if some other itme is prefered 
     private float coolDownTimer;
-    int maxNumberOfComponents = 2;
+    //int maxNumberOfComponents = 2;
 
     // Start is called before the first frame update
     void Start()

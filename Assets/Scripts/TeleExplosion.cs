@@ -14,9 +14,9 @@ public class TeleExplosion : MonoBehaviour
     private float speed;
     private int tele;
     public Transform explosion;
-    private float power = 500.0f;
+    private float power = 1500.0f;
     private float radius = 20.0f;
-    private float upforce = 1.0f;
+    //private float upforce = 1.0f;
 
 
     // Start is called before the first frame update

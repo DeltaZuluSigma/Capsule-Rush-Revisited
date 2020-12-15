@@ -377,7 +377,7 @@ public class PlayerBehaviour : MonoBehaviour
             t = Instantiate(tMarker) as GameObject;
          }
          if(t != null)
-        t.transform.position = new Vector3(this.transform.position.x + tDistance, this.transform.position.y, 0.0f);
+            t.transform.position = new Vector3(this.transform.position.x + tDistance, this.transform.position.y, 0.0f);
     }
 
      private void checkTeleport()
@@ -451,41 +451,37 @@ public class PlayerBehaviour : MonoBehaviour
     public void loadData()
     {
         // collectables
-        if (PlayerPrefs.GetInt("lives") != null)
-            lives = PlayerPrefs.GetInt("lives");
-        else lives = 3;
+        lives = PlayerPrefs.GetInt("lives", 3);
 
-        if (PlayerPrefs.GetInt("coins") != null)
-            coins = PlayerPrefs.GetInt("coins");
-        else coins = 0;
+        coins = PlayerPrefs.GetInt("coins", 0);
 
         //power ups
-        if (PlayerPrefs.GetInt("pLaser") != null)
-            canShoot = PlayerPrefs.GetInt("pLaser") == 1 ? true : false;
+        if (PlayerPrefs.GetInt("pLaser", 0) == 1)
+            canShoot = true;
         else canShoot = false;
 
-        if (PlayerPrefs.GetInt("pSpeedBoost") != null)
-            hasSpeedBoost = PlayerPrefs.GetInt("pSpeedBoost") == 1 ? true : false;
+        if (PlayerPrefs.GetInt("pSpeedBoost", 0) == 1)
+            hasSpeedBoost = true;
         else hasSpeedBoost = false;
 
-        if (PlayerPrefs.GetInt("pInvincible") != null)
-            isInvincible = PlayerPrefs.GetInt("pInvincible") == 1 ? true : false;
+        if (PlayerPrefs.GetInt("pInvincible", 0) == 1)
+            isInvincible = true;
         else isInvincible = false;
 
-        if (PlayerPrefs.GetInt("pGravity") != null)
-            flipGrav = PlayerPrefs.GetInt("pGravity") == 1 ? true : false;
+        if (PlayerPrefs.GetInt("pGravity", 0) == 1)
+            flipGrav = true;
         else flipGrav = false;
 
-        if (PlayerPrefs.GetInt("pTeleport") != null)
-            canTeleport = PlayerPrefs.GetInt("pTeleport") == 1 ? true : false;
+        if (PlayerPrefs.GetInt("pTeleport", 0) == 1)
+            canTeleport = true;
         else canTeleport = false;
 
         // timers
-        if (PlayerPrefs.GetFloat("sTimer") != null && PlayerPrefs.GetInt("pSpeedBoost") == 1)
+        if (PlayerPrefs.GetFloat("sTimer", 0) != 0 && PlayerPrefs.GetInt("pSpeedBoost") == 1)
             sTimer = PlayerPrefs.GetFloat("sTimer");
         else sTimer = 5.0f;
 
-        if (PlayerPrefs.GetFloat("iTimer") != null && PlayerPrefs.GetInt("pInvincible") == 1)
+        if (PlayerPrefs.GetFloat("iTimer", 0) != 0 && PlayerPrefs.GetInt("pInvincible") == 1)
             iTimer = PlayerPrefs.GetFloat("iTimer");
         else iTimer = 3.1f;
     }
