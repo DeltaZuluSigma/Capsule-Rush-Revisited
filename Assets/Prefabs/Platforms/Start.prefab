@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 7750218213804783291}
   m_Layer: 8
   m_Name: Base
-  m_TagString: Untagged
+  m_TagString: Base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

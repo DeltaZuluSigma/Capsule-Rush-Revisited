@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerBehaviour : MonoBehaviour
 {
     public PlayerController controller;
-    public GameObject[] spawnPoint = new GameObject[1];                // reference to spawn in first gen block of level
+    private GameObject[] spawnPoint = new GameObject[1];                // reference to spawn in first gen block of level
     public LaserGun laserGun;               // ref to players laser gun
     public GameObject tMarker;              // place to teleport
     private GameObject t;
@@ -73,11 +73,8 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Start()
     {
-        spawnPoint = GameObject.FindGameObjectsWithTag("Spawn");
 
-        spawnPlayer();
-
-        isDead = false;
+        Time.timeScale = 1;
 
         iLaser.enabled = false;
         iSpeed.enabled = false;
@@ -87,6 +84,10 @@ public class PlayerBehaviour : MonoBehaviour
         iTele.enabled = false;
         iGrav.enabled = false;
         nextLevel.SetActive(false);
+
+        isDead = false;
+
+        spawnPlayer();
     }
 
     void FixedUpdate()
@@ -133,12 +134,16 @@ public class PlayerBehaviour : MonoBehaviour
             lives++;
         }
 
-        if(col.gameObject.tag == "Dead")
+        if(col.gameObject.tag == "Death")
         {
-            GameObject[] bases = new GameObject[10];
-            if (bases[0] != null)
-                this.transform.position = new Vector3(bases[0].transform.position.x, bases[0].transform.position.y + 3.0f, 0.0f);
-            else spawnPlayer();
+            GameObject[] bases = new GameObject[12];
+            bases = GameObject.FindGameObjectsWithTag("Base");
+
+            for(int i = 0; i <= bases.Length-1; i++)
+            {
+                if (this.transform.position.x >= (bases[i].transform.position.x - 30) && this.transform.position.x <= (bases[i].transform.position.x + 30) && this.transform.position.y >= (bases[i].transform.position.y - 100) && this.transform.position.y <= (bases[i].transform.position.y + 100))
+                    this.transform.position = new Vector3(bases[i].transform.position.x, bases[i].transform.position.y + 3.0f, 0.0f);
+            }
         }
 
         if (col.gameObject.tag == "End")
@@ -312,7 +317,6 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (sTimer <= 0.0f)
         {
-            
             controller.walkSpeed = 30;
             controller.runSpeed = 50;
             hasSpeedBoost = false;
@@ -328,8 +332,8 @@ public class PlayerBehaviour : MonoBehaviour
         {
             if (sTimer <= 3.0f)
             {
-                controller.walkSpeed  = 60;
-                controller.runSpeed = 80;
+                controller.walkSpeed  = 75;
+                controller.runSpeed = 90;
             }
 
             sTimer -= Time.deltaTime;
@@ -386,23 +390,20 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
    
-
-
     private void spawnPlayer()
     {
-        if (spawnPoint[0] != null)
-        {
-            this.transform.position = spawnPoint[0].transform.position;
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 5f, 0.0f);
+        spawnPoint = GameObject.FindGameObjectsWithTag("Spawn");
+        if(spawnPoint[0] != null)
+        { 
+            this.transform.position = new Vector3(spawnPoint[0].transform.position.x, spawnPoint[0].transform.position.y + 5f, 0.0f);
         }
     }
+
     private void respawnPlayer()
     {
         if (isDead)
         {
-            this.transform.position = spawnPoint[0].transform.position;
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 5f, 0.0f);
-            isDead = false;
+            this.transform.position = new Vector3(spawnPoint[0].transform.position.x, spawnPoint[0].transform.position.y + 5f, 0.0f);
         }
     }
 
