@@ -393,10 +393,10 @@ public class PlayerBehaviour : MonoBehaviour
    
     private void spawnPlayer()
     {
-        spawnPoint = GameObject.FindGameObjectsWithTag("Spawn");
-        if(spawnPoint[0] != null)
+        GameObject spawnP = GameObject.FindWithTag("Spawn");
+        if(spawnPoint != null)
         { 
-            this.transform.position = new Vector3(spawnPoint[0].transform.position.x, spawnPoint[0].transform.position.y + 5f, 0.0f);
+            this.transform.position = new Vector3(spawnP.transform.position.x, spawnP.transform.position.y + 5f, 0.0f);
         }
     }
 

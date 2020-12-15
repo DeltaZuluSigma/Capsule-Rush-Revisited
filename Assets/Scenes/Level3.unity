@@ -401,7 +401,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 259547137}
-  spawnPoint: []
   laserGun: {fileID: 638089169}
   tMarker: {fileID: 6134670666001129584, guid: fdc062d6693844315a01e817e3937fea, type: 3}
   foot: {fileID: 572233119}
@@ -896,6 +895,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 350785788}
   m_CullTransparentMesh: 0
+--- !u!1 &366357675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 366357677}
+  - component: {fileID: 366357676}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &366357676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366357675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a47a3e1d24e4cc44bd051dd8114daba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockPrefabs:
+  - {fileID: 4194707597681353526, guid: f96705b68443ce742b6bd4d39b2ae508, type: 3}
+  - {fileID: 6790901401251123122, guid: 0c8a33430cd878c4bb1c4c9b639e8651, type: 3}
+  - {fileID: 2247916182950936735, guid: 2fc9cff8ba43ec4409a2d571ca4be696, type: 3}
+  - {fileID: 2507897125368870019, guid: 0ce32cbcc0831b1418fc8e53462c77a8, type: 3}
+  - {fileID: 9142218648073687469, guid: b8d702105ae364a4aa1943160f1c4a62, type: 3}
+  - {fileID: 7269325987113931611, guid: 2ef5fea576b21e342988bd311e2dabbe, type: 3}
+  - {fileID: 3262530174908999625, guid: 23f604ce67323cb4d975294a191650cc, type: 3}
+  - {fileID: 3262530174908999625, guid: 23f604ce67323cb4d975294a191650cc, type: 3}
+  StartBlock: {fileID: 7750218214035148526, guid: 1b0c8dd7b358dbe4c8914ba35937f6e5, type: 3}
+  EndBlock: {fileID: 6248850852518254943, guid: ff9d6af4cebe42740999838b69e3a936, type: 3}
+--- !u!4 &366357677
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366357675}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &539612053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,7 +1251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 4732639814782777022, guid: ed3d9a61b32af45699abd79278b7833a, type: 3}
-  laserSpeed: 100
+  laserSpeed: 1000
   laserKills: 0
   lasers:
   - {fileID: 0}
