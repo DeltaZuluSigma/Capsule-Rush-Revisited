@@ -136,12 +136,14 @@ public class PlayerBehaviour : MonoBehaviour
 
         if(col.gameObject.tag == "Death")
         {
+            if(!isInvincible)
+            takeDamage();
             GameObject[] bases = new GameObject[12];
             bases = GameObject.FindGameObjectsWithTag("Base");
 
             for(int i = 0; i <= bases.Length-1; i++)
             {
-                if (this.transform.position.x >= (bases[i].transform.position.x - 30) && this.transform.position.x <= (bases[i].transform.position.x + 30) && this.transform.position.y >= (bases[i].transform.position.y - 100) && this.transform.position.y <= (bases[i].transform.position.y + 100))
+                if ((this.transform.position.x >= bases[i].transform.position.x - 30) && (this.transform.position.x <= bases[i].transform.position.x + 30) && (this.transform.position.y >= bases[i].transform.position.y - 100) && (this.transform.position.y <= bases[i].transform.position.y + 100))
                     this.transform.position = new Vector3(bases[i].transform.position.x, bases[i].transform.position.y + 3.0f, 0.0f);
             }
         }
@@ -178,7 +180,6 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (lives < 0)
         {
-            lives = 0;
             isDead = true;
             respawnPlayer();
         }
@@ -403,7 +404,10 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (isDead)
         {
+            Time.timeScale = 0;
+            mmButton.SetActive(true);
             this.transform.position = new Vector3(spawnPoint[0].transform.position.x, spawnPoint[0].transform.position.y + 5f, 0.0f);
+            lives = 0;
         }
     }
 

@@ -1197,7 +1197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 4732639814782777022, guid: ed3d9a61b32af45699abd79278b7833a, type: 3}
-  laserSpeed: 100
+  laserSpeed: 1000
   laserKills: 0
   lasers:
   - {fileID: 0}
