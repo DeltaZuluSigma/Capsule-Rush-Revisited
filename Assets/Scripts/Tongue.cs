@@ -7,7 +7,7 @@ public class Tongue : MonoBehaviour
 
 
     private Transform target;
-    private float speed = 0.5f;
+    private float speed = 2.0f;
     private Rigidbody rb;
     private Vector3 moveDirection;
 
@@ -16,6 +16,7 @@ public class Tongue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         rb = GetComponent<Rigidbody>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();//gets the target
         moveDirection = ((target.transform.position - this.transform.position).normalized * speed);

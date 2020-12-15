@@ -52,7 +52,8 @@ public class MedEnemy : MonoBehaviour
                 if (coolDownTimer == 0)
                 {
                     //Debug.Log(this.lives);
-                    Instantiate(EnemyLaser, this.transform.position, Quaternion.identity);//makes the lasers if the cooldown is done
+                    Vector3 temp = new Vector3(this.transform.position.x - 2, this.transform.position.y, this.transform.position.z);
+                    Instantiate(EnemyLaser, temp, Quaternion.identity);//makes the lasers if the cooldown is done
                     GameObject l = Instantiate(EnemyLaser) as GameObject;
                     coolDownTimer = coolDown;//resets cooldown
                     //Debug.Log("?");

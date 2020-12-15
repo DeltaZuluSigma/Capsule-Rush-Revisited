@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 392309071e3450a4fb6c8a54d5edb875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tongue: {fileID: 2579778074897735430, guid: 97aecef6d66be114a958fe7f9d919a0d, type: 3}
+  tongue: {fileID: 2579778074897735430, guid: 97aecef6d66be114a958fe7f9d919a0d, type: 3}
   lives: 0
 --- !u!114 &4477058792300918801
 MonoBehaviour:

@@ -5,7 +5,7 @@ using UnityEngine;
 public class LargeEnemy : MonoBehaviour
 {
 
-    public GameObject Tongue;
+    public GameObject tongue;
     public int lives;
     private int maxLives;
     private Transform target;
@@ -39,14 +39,15 @@ public class LargeEnemy : MonoBehaviour
         }
         else
         {
-            if (transform.position.x >= (target.position.x - 10) && transform.position.x <= (target.position.x + 10) ) {
+            if (transform.position.x >= (target.position.x - 15) && transform.position.x <= (target.position.x + 15) ) {
 
                 
 
                 if (transform.position.x >= (target.position.x - 8) && transform.position.x <= (target.position.x + 8)) {
                     if (coolDownTimer >= 0.75f)
                     {
-                        Instantiate(Tongue, this.transform.position, Quaternion.identity);
+                        Vector3 temp = new Vector3(this.transform.position.x-2, this.transform.position.y, this.transform.position.z);
+                        Instantiate(tongue, temp, Quaternion.identity);
                     }
                 }
 
