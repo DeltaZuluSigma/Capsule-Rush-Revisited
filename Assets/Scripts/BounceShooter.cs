@@ -5,17 +5,17 @@ using UnityEngine;
 public class BounceShooter : MonoBehaviour
 {
     public GameObject FireBall;
-    private int lives;
+    public int lives;
     private int maxLives;
     private Transform target;
     private float coolDown = 1f;//this is in seconds can be switched for later use if some other itme is prefered 
     private float coolDownTimer;
-    int maxNumberOfComponents = 2;
+    //int maxNumberOfComponents = 2;
 
     // Start is called before the first frame update
     void Start()
     {
-        maxLives = 2;
+        maxLives = 1;
         lives = maxLives;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
@@ -53,7 +53,7 @@ public class BounceShooter : MonoBehaviour
                 {
                     //Debug.Log(this.lives);
                     Instantiate(FireBall, this.transform.position, Quaternion.identity);//makes the lasers if the cooldown is done
-                    GameObject l = Instantiate(FireBall) as GameObject;
+                    //GameObject l = Instantiate(FireBall) as GameObject;
                     coolDownTimer = coolDown;//resets cooldown
                     //Debug.Log("?");
                 }

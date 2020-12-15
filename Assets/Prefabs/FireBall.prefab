@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3508204273611763958}
   - component: {fileID: 3508204273611763959}
   - component: {fileID: 3508204273611763956}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sphere
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 4807026416721738997}
   - component: {fileID: 4954726753636273316}
   - component: {fileID: 4012548801974933767}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FireBall
   m_TagString: Obstacle
   m_Icon: {fileID: 0}

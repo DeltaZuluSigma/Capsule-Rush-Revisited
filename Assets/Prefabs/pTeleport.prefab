@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 8724008810433125462}
   - component: {fileID: 1792347934815688666}
   - component: {fileID: 2792660253185569046}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pTeleport
-  m_TagString: Untagged
+  m_TagString: pTeleport
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

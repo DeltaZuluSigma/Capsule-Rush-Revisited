@@ -10,7 +10,7 @@ public class Spawn : MonoBehaviour
     public GameObject TeleExplosion;
     public GameObject shooter;
     private int i = 0;//this is in seconds can be switched for later use if some other itme is prefered 
-    private float coolDownTimer=0;
+    //private float coolDownTimer=0;
 
     //spawner location randomise which enemy is spawned and where
 
@@ -18,43 +18,33 @@ public class Spawn : MonoBehaviour
     {
         if (i == 0)
         {
+            int rand = RandNum.GetRandomNumber(0,99);
 
-                System.Random rnd = new System.Random();
-                int rand = rnd.Next(99);
-
-                if (rand < 20)
-                {
-                    Instantiate(SmallEnemyPrefab, transform.position, Quaternion.identity);
-                }
-                else if (rand > 20 && rand < 40)
-                {
-                    Instantiate(MedEnemyPrefab, transform.position, Quaternion.identity);
-                }
-                else if (rand > 40 && rand < 60)
-                {
-                    Instantiate(LargeEnemyPrefab, transform.position, Quaternion.identity);
-                }
-                else if (rand > 60 && rand < 80)
-                {
-                    Instantiate(TeleExplosion, transform.position, Quaternion.identity);
-                }
-                else if(rand > 80 && rand < 90)
-                {
-                    Instantiate(shooter, transform.position, Quaternion.identity);
-                }
-<<<<<<< HEAD
+            if (rand < 20)
+            {
+                Instantiate(SmallEnemyPrefab, new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z), Quaternion.identity);
+            }
+            else if (rand > 20 && rand < 40)
+            {
+                Instantiate(MedEnemyPrefab, new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z), Quaternion.identity);
+            }
+            else if (rand > 40 && rand < 45)
+            {
+                Instantiate(LargeEnemyPrefab, new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z), Quaternion.identity);
+            }
+            else if (rand > 45 && rand < 70)
+            {
+                Instantiate(TeleExplosion, new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z), Quaternion.identity);
+            }
+            else if(rand > 70 && rand < 90)
+            {
+                Instantiate(shooter, new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z), Quaternion.identity);
+            }
             else
             {
 
             }
             i++;
-=======
-             else
-                {
-
-                }
-             i++;
->>>>>>> 15b8ab97dceb319bc2363101e065c003ca57a476
 
         }
     }

@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Prefabs/Platforms/Platform 1.prefab.meta
 guid: f96705b68443ce742b6bd4d39b2ae508
 PrefabImporter:
+=======
+guid: ca140e319d0574288b26ee209c713036
+DefaultImporter:
+>>>>>>> Stashed changes:Assets/Scenes/MainMenu.unity.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

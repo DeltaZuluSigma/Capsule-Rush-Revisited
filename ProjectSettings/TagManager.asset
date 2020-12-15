@@ -3,7 +3,27 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Head
+  - Enemy
+  - Obstacle
+  - Spawner
+  - Laser
+  - Live
+  - Coin
+  - pSpeedBoost
+  - pInvincible
+  - pTeleport
+  - pAntiGravity
+  - Ground
+  - Spawn
+  - Foot
+  - pLaserGun
+  - Death
+  - End
+  - Base
+  - Undefined
+  - spwn
   layers:
   - Default
   - TransparentFX
@@ -13,13 +33,13 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - ground
+  - player
+  - powerup
+  - collectable
+  - obstacle
+  - enemy
+  - Laser
   - 
   - 
   - 

@@ -6,7 +6,7 @@ public class SmallEnemy : MonoBehaviour
 {
 
 
-    private int lives;
+    public int lives;
     private int maxLives;
     private Transform target;
     public float speed;
@@ -31,7 +31,7 @@ public class SmallEnemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (transform.position.x >= (target.position.x - 15) && transform.position.x <= (target.position.x + 15))
+        if (transform.position.x >= (target.position.x - 15) && transform.position.x <= (target.position.x + 15) && transform.position.y >= (target.position.y - 3) && transform.position.y <= (target.position.y + 3))
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);//if turned into vector 2 only folllows in 2d
         }

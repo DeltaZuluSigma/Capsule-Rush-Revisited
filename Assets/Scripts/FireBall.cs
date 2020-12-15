@@ -7,7 +7,7 @@ public class FireBall : MonoBehaviour
 
 
     private Transform target;
-    private float speed = 5.0f;
+    private float speed = 10.0f;
     private Rigidbody rb;
     private Vector3 moveDirection;
     private Vector3 lastVelocity;
@@ -32,12 +32,12 @@ public class FireBall : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "Head" || col.gameObject.tag == "EnemyLaser" || col.gameObject.tag == "Obstacle" || col.gameObject.tag == "Spawner"|| col.gameObject.tag == "Ground"|| col.gameObject.layer == LayerMask.NameToLayer("ground"))
+        if (col.gameObject.tag == "Enemy"|| col.gameObject.tag == "Head" || col.gameObject.tag == "EnemyLaser" || col.gameObject.tag == "Obstacle" || col.gameObject.tag == "Spawner"|| col.gameObject.tag == "Ground"|| col.gameObject.layer == LayerMask.NameToLayer("ground"))
         {
             if (col.gameObject.tag == "Obstacle" || col.gameObject.tag == "Spawner" || col.gameObject.tag == "Ground"|| col.gameObject.layer == LayerMask.NameToLayer("ground"))
             {
                 ContactPoint cp = col.contacts[0];
-                rb.velocity = Vector3.Reflect(lastVelocity, cp.normal);
+                //rb.velocity = Vector3.Reflect(lastVelocity, cp.normal);
             }
         }
         

@@ -25,11 +25,13 @@ public class Pause : MonoBehaviour
         {
             button.SetActive(false);
             paused = false;
+            Time.timeScale = 1;
         }
         else
         {
             button.SetActive(true);
             paused = true;
+            Time.timeScale = 0;
         }
     }
 }

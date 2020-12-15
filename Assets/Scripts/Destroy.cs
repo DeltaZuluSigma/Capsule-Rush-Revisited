@@ -11,7 +11,7 @@ public class Destroy : MonoBehaviour
         //Player character is. Note: If the player has multiple tags
         //due to powerups, then use || to distinguish each.
         //E.g. col.gameObject.tag == "CapsuleBlue" || col.gameObject.tag == "CapsuleRed" || etc.
-        if (col.gameObject.tag == "CapsuleBlue")
+        if (col.gameObject.tag == "Player")
         {
             this.gameObject.SetActive(false);
         }

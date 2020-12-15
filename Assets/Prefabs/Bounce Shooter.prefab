@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FireBall: {fileID: 3508204275348532707, guid: 2d37b0f2cc6e5654580fc267e7694e42, type: 3}
+  lives: 0
 --- !u!1001 &573559984359780948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20,6 +21,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4329316216408801586, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
+      propertyPath: m_Constraints
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513494208250013808, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 8513494208250013811, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -32,17 +41,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 8513494208640172350, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 8513494208640172351, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.146409
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8513494208640172351, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.09957743
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8513494208640172351, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.2028913
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8513494208640172351, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
       propertyPath: m_LocalRotation.x
@@ -77,8 +90,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8513494208912631947, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8513494208912631950, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
       propertyPath: m_Materials.Array.data[0]
