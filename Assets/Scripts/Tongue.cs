@@ -21,7 +21,7 @@ public class Tongue : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();//gets the target
         moveDirection = ((target.transform.position - this.transform.position).normalized * speed);
         rb.velocity = new Vector3(moveDirection.x, moveDirection.y, moveDirection.z);
-        Destroy(gameObject, 0.5f);//timer
+        Destroy(gameObject, 1.5f);//timer
 
     }
 
