@@ -18,7 +18,7 @@ public class GenerateLevel : MonoBehaviour
     {
         newBlock = Instantiate(StartBlock, new Vector3(0, 0, 0), Quaternion.identity);
         lastBlock = newBlock;
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 10; i++)
         {
             CreateNewBlock();
         }

@@ -1,5 +1,101 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &548665275101806612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1561987933363849437}
+  - component: {fileID: 750060512457160950}
+  m_Layer: 8
+  m_Name: PowerUp#2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1561987933363849437
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548665275101806612}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 105, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7269325987113931612}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &750060512457160950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548665275101806612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c36798dd82f712e4781d155cbf27bccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LazerGun: {fileID: 1110472785198385599, guid: be90b033465ec9647bf6b419cf2294b7, type: 3}
+  SpeedBoost: {fileID: 4534074422835921891, guid: 6af5fdde908e5ed40b271b173809fb34, type: 3}
+  Teleport: {fileID: 5387706607954457394, guid: 8c9b0859b7f452d40b03cb22e26efaa4, type: 3}
+  Invincibility: {fileID: 7442740232330086887, guid: 5fb0a30dfd77c6b4e81dc6ef0e0cf603, type: 3}
+  OneUp: {fileID: 2307289836497553914, guid: e8aba44a937b82f40b6476899f91cb6a, type: 3}
+--- !u!1 &722112057849014010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3529072196296971330}
+  - component: {fileID: 6300934206852459621}
+  m_Layer: 8
+  m_Name: PowerUp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3529072196296971330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722112057849014010}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 60, y: 5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7269325987113931612}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6300934206852459621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722112057849014010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c36798dd82f712e4781d155cbf27bccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LazerGun: {fileID: 1110472785198385599, guid: be90b033465ec9647bf6b419cf2294b7, type: 3}
+  SpeedBoost: {fileID: 4534074422835921891, guid: 6af5fdde908e5ed40b271b173809fb34, type: 3}
+  Teleport: {fileID: 5387706607954457394, guid: 8c9b0859b7f452d40b03cb22e26efaa4, type: 3}
+  Invincibility: {fileID: 7442740232330086887, guid: 5fb0a30dfd77c6b4e81dc6ef0e0cf603, type: 3}
+  OneUp: {fileID: 2307289836497553914, guid: e8aba44a937b82f40b6476899f91cb6a, type: 3}
 --- !u!1 &7269325987113931611
 GameObject:
   m_ObjectHideFlags: 0
@@ -40,6 +136,8 @@ Transform:
   - {fileID: 7852016369407007532}
   - {fileID: 7852016368594429011}
   - {fileID: 2474022226213774862}
+  - {fileID: 3529072196296971330}
+  - {fileID: 1561987933363849437}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -55,6 +153,7 @@ GameObject:
   - component: {fileID: 7269325988895181939}
   - component: {fileID: 7269325988895181938}
   - component: {fileID: 7269325988895181937}
+  - component: {fileID: 7922280111747334324}
   m_Layer: 8
   m_Name: End
   m_TagString: Untagged
@@ -138,6 +237,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7922280111747334324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7269325988895181903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1c0e29e0a456da4d99ca1c3aded1f57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SmallEnemyPrefab: {fileID: 356447978620613801, guid: 638469d344af1814e970052925528209, type: 3}
+  MedEnemyPrefab: {fileID: 8513494208640172350, guid: 82d0aefd3834c71429192cfa7ddfc721, type: 3}
+  LargeEnemyPrefab: {fileID: 2291527981800197011, guid: e974fe3cf0cd9a544a6c3263e304b935, type: 3}
+  TeleExplosion: {fileID: 697203762198716625, guid: aac1db9f591066d4495e60280672f224, type: 3}
+  shooter: {fileID: 8202093015078237034, guid: 5b48100ad29eae94aa485500b0905e7d, type: 3}
 --- !u!1 &7269325988933577602
 GameObject:
   m_ObjectHideFlags: 0

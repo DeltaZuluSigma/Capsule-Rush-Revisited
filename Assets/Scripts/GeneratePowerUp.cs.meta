@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c36798dd82f712e4781d155cbf27bccb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - LazerGun: {fileID: 1110472785198385599, guid: be90b033465ec9647bf6b419cf2294b7, type: 3}
+  - SpeedBoost: {fileID: 4534074422835921891, guid: 6af5fdde908e5ed40b271b173809fb34, type: 3}
+  - Teleport: {fileID: 5387706607954457394, guid: 8c9b0859b7f452d40b03cb22e26efaa4, type: 3}
+  - Invincibility: {fileID: 7442740232330086887, guid: 5fb0a30dfd77c6b4e81dc6ef0e0cf603, type: 3}
+  - OneUp: {fileID: 2307289836497553914, guid: e8aba44a937b82f40b6476899f91cb6a, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
