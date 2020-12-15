@@ -1,5 +1,53 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1662439564722794960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6777802673720598925}
+  - component: {fileID: 1298317686717627247}
+  m_Layer: 8
+  m_Name: PowerUp#2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6777802673720598925
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662439564722794960}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 27, y: -10, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1973833132764869495}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1298317686717627247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662439564722794960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c36798dd82f712e4781d155cbf27bccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LazerGun: {fileID: 1110472785198385599, guid: be90b033465ec9647bf6b419cf2294b7, type: 3}
+  SpeedBoost: {fileID: 4534074422835921891, guid: 6af5fdde908e5ed40b271b173809fb34, type: 3}
+  Teleport: {fileID: 5387706607954457394, guid: 8c9b0859b7f452d40b03cb22e26efaa4, type: 3}
+  Invincibility: {fileID: 7442740232330086887, guid: 5fb0a30dfd77c6b4e81dc6ef0e0cf603, type: 3}
+  OneUp: {fileID: 2307289836497553914, guid: e8aba44a937b82f40b6476899f91cb6a, type: 3}
 --- !u!1 &1973833131703219618
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,6 +509,8 @@ Transform:
   - {fileID: 8420137333418246105}
   - {fileID: 3273210625243848358}
   - {fileID: 4672454278826988771}
+  - {fileID: 8787181278321002201}
+  - {fileID: 6777802673720598925}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1165,6 +1215,54 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &7185176576599281504
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8787181278321002201}
+  - component: {fileID: 4299589573645876917}
+  m_Layer: 8
+  m_Name: PowerUp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8787181278321002201
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7185176576599281504}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 25, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1973833132764869495}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4299589573645876917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7185176576599281504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c36798dd82f712e4781d155cbf27bccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LazerGun: {fileID: 1110472785198385599, guid: be90b033465ec9647bf6b419cf2294b7, type: 3}
+  SpeedBoost: {fileID: 4534074422835921891, guid: 6af5fdde908e5ed40b271b173809fb34, type: 3}
+  Teleport: {fileID: 5387706607954457394, guid: 8c9b0859b7f452d40b03cb22e26efaa4, type: 3}
+  Invincibility: {fileID: 7442740232330086887, guid: 5fb0a30dfd77c6b4e81dc6ef0e0cf603, type: 3}
+  OneUp: {fileID: 2307289836497553914, guid: e8aba44a937b82f40b6476899f91cb6a, type: 3}
 --- !u!1 &8420137332003003076
 GameObject:
   m_ObjectHideFlags: 0
